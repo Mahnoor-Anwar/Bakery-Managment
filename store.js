@@ -1,5 +1,5 @@
-var marginY = 0;
-var destination = 0;
+var marginY = 4;
+var destination = 6;
 var speed = 5;
 var scroller = null;
 
@@ -15,5 +15,5 @@ function ScrollFun(element){
     if(marginY >= destination){
         clearTimeout(scroller);
     }
-    window.scroll(0,marginY);
+    window.scroll(0 , marginY);
 }
