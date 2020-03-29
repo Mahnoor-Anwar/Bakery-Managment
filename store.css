@@ -1,0 +1,113 @@
+
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-family: 'Lobster', cursive;
+}
+
+
+.navbar{
+    background-color: rgb(243, 203, 70);
+    height: 60px;
+    width: 100x;
+    position: sticky;
+    top: 0;
+    display: flex;
+    z-index: 1;
+    
+}
+h2{
+    float: right;
+    margin-right: 200px;
+    line-height: 60px;
+    font-weight: lighter;
+}
+
+
+
+.navbar-center{
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+
+}
+.nav-icon{
+    font-size: 1.5rem;
+}
+.cart-btn{
+    position: relative;
+    cursor: pointer;
+}
+.cart-item {
+    position: absolute;
+    top: -12px;
+    right: -8px;
+    background: hotpink;
+    padding: 0 5px;
+    border-radius: 30%;
+    color: honeydew;
+}
+.main-content{
+    background-image:linear-gradient(rgba(-2, -2, -2, 0.5),rgba(-2, -2, -2, 0.5)), url('b.jpg');
+    background-size: cover;
+    height: 105vh;
+    text-align: center;
+    color: white;
+    bottom: 50%;
+    left: 80%;
+   
+}
+
+.btn{
+    border-radius: 200px;
+    transition: background-color 0.2s , border 0.2s , color 0.2 ;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+.btn-full{
+    background-color: transparent;
+    color: rgb(255, 197, 6);
+    border: 2px solid rgb(248, 244, 7);
+}
+.btn-full:hover{
+    background-color: white;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+.head{
+    animation: colorchange 1s infinite;
+}
+
+@keyframes colorchange{
+    0%{color: crimson;}
+    25%{color: rgb(70, 70, 189);}
+    50%{color:rgb(44, 189, 44);}
+    100%{color:yellow;}
+}
+
+.mc{
+    text-align: center;
+}
+
+.container{
+    display: flex ;
+}
+.container2{
+    display: flex;
+}
+.container3{
+    display: flex;
+}
+.container4{
+    display: flex;
+}
