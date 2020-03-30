@@ -58,7 +58,7 @@ h2{
 .main-content{
     background-image:linear-gradient(rgba(-2, -2, -2, 0.5),rgba(-2, -2, -2, 0.5)), url('b.jpg');
     background-size: cover;
-    height: 105vh;
+    height: 115vh;
     text-align: center;
     color: white;
     bottom: 50%;
@@ -99,15 +99,15 @@ a{
     text-align: center;
 }
 
-.container{
-    display: flex ;
+#sec1{
+    text-align: center;
 }
-.container2{
-    display: flex;
+#sec2{
+    text-align: center;
 }
-.container3{
-    display: flex;
+#sec3{
+    text-align: center;
 }
-.container4{
-    display: flex;
+#sec4{
+    text-align: center;
 }

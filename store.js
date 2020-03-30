@@ -1,6 +1,6 @@
-var marginY = 4;
-var destination = 6;
-var speed = 5;
+var marginY = 0;
+var destination = 0;
+var speed = 30;
 var scroller = null;
 
 function ScrollFun(element){
@@ -8,12 +8,13 @@ function ScrollFun(element){
 
     scroller = setTimeout(function(){
         ScrollFun(element);
-    },1)
+    },7)
 
     marginY = marginY + speed;
 
     if(marginY >= destination){
         clearTimeout(scroller);
     }
-    window.scroll(0 , marginY);
+    window.scroll( 0, marginY);
 }
+
