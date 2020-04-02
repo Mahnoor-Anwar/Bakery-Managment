@@ -5,6 +5,7 @@
     <title>baker's kitchen</title>
     <link rel="stylesheet" href="store.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -15,13 +16,18 @@
            <a href="#" id="bis" onclick="ScrollFun('container2')">Biscuits</a>
            <a href="#" id="sav" onclick="ScrollFun('container3')">Savories</a>
            <a href="#" id="br" onclick="ScrollFun('container4')">Breakfast Items</a>
-           <div class="cart-btn">
-               <span class="nav-icon">
-                <i class="fas fa-shopping-cart" ></i>
-               </span>
-               <div class="cart-item">0</div>
+         
+
+           <div id="overlay">
            </div>
+           <div class="cart-btn">
+               <span class="nav-icon"  >
+                <i class="fas fa-shopping-cart" onclick="on()"  ></i>
+               </span>
+             
+               <div class="cart-item">0</div>
         </div>
+        
     </nav>
 
     <section class="main-content">
@@ -399,10 +405,9 @@
         
 
     
-    
-    
 
     <script src="store.js"></script>
     <script src="https://kit.fontawesome.com/e201a2f31b.js" crossorigin="anonymous"></script>
+    
 </body>
 </html>

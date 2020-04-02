@@ -111,3 +111,11 @@ a{
 #sec4{
     text-align: center;
 }
+
+
+#overlay {
+    background: white;
+    width: 250;
+    height: 700;
+    display: none;
+}
