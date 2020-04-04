@@ -262,11 +262,11 @@ function displaycart() {
 
   if (cartitems && productcontainer) {
     productcontainer.innerHTML = "";
-    Object.values(cartitems).forEach(item => {
+    Object.values(cartitems).map(item => {
       productcontainer.innerHTML += `
             <div class="productss">
             <i class="far fa-times-circle"></i>
-            <img src="/new project/${item.tag}.jpg">
+            <img src="./Users/warda.anwer/Desktop/${item.tag}.jpg">
             <span>${item.name}</span>
              </div>
              `;
