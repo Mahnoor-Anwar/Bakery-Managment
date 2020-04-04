@@ -26,15 +26,22 @@ const button = document.querySelectorAll('.btn');
 
 let product = [
     {
-        name: 'chovolate cupcake' , 
+        name: 'you can shop your favourite item' , 
+        price : 0 , 
+        tag : 'shop', 
+        Incart : 0
+    },
+    {
+        name: 'chocolate cupcake' , 
         price : 90 , 
         tag : 'cc', 
         Incart : 0
     },
 
     {
-        name: 'vnila cupcake' , 
-        price : 90 , 
+        name: 'Vanila cupcake' , 
+        price : 
+        90 , 
         tag : 'vc', 
         Incart : 0
     },
@@ -68,119 +75,119 @@ let product = [
 
     {
         name: 'jamdot' , 
-        price : 90 , 
+        price : 150 , 
         tag : 'jd', 
         Incart : 0
     },
 
     {
-        name: 'chovolate ' , 
-        price : 90 , 
+        name: 'chocolate ' , 
+        price : 170 , 
         tag : 'cb', 
         Incart : 0
     },
 
     {
         name: 'nuts' , 
-        price : 90 , 
+        price : 160 , 
         tag : 'nb', 
         Incart : 0
     },
 
     {
         name: 'coconut' , 
-        price : 90 , 
+        price : 160 , 
         tag : 'ccb', 
         Incart : 0
     },
 
     {
         name: 'xeeera' , 
-        price : 90 , 
+        price : 150 , 
         tag : 'zb', 
         Incart : 0
     },
 
     {
         name: 'naan khatai' , 
-        price : 90 , 
+        price : 150 , 
         tag : 'nk', 
         Incart : 0
     },
 
     {
         name: 'chicken' , 
-        price : 90 , 
+        price : 55 , 
         tag : 'ch', 
         Incart : 0
     },
 
     {
         name: 'samosa' , 
-        price : 90 , 
+        price : 40 , 
         tag : 's', 
         Incart : 0
     },
 
     {
         name: 'mini pizza' , 
-        price : 90 , 
+        price : 110 , 
         tag : 'mp', 
         Incart : 0
     },
 
     {
         name: 'gralic bread' , 
-        price : 90 , 
+        price : 80 , 
         tag : 'gb', 
         Incart : 0
     },
 
     {
         name: 'sandwhich' , 
-        price : 90 , 
+        price : 75 , 
         tag : 'sw', 
         Incart : 0
     },
 
     {
         name: 'plain cake' , 
-        price : 90 , 
+        price : 210 , 
         tag : 'pc', 
         Incart : 0
     },
 
     {
         name: 'eggs' , 
-        price : 90 , 
+        price : 120 , 
         tag : 'e', 
         Incart : 0
     },
 
     {
         name: 'rusk' , 
-        price : 90 , 
+        price : 110 , 
         tag : 'r', 
         Incart : 0
     },
 
     {
         name: 'Bread' , 
-        price : 90 , 
+        price : 50 , 
         tag : 'b', 
         Incart : 0
     },
 
     {
         name: 'butter' , 
-        price : 90 , 
+        price : 210 , 
         tag : 'bt', 
         Incart : 0
     },
 
     {
         name: 'maska bun' , 
-        price : 90 , 
+        price : 70 , 
         tag : 'mb', 
         Incart : 0
     },
@@ -192,6 +199,8 @@ for(let  i =0 ; i<button.length; i++){
     button[i].addEventListener('click' , () => {
      console.log('clicked');
         cartnumbers(product[i]);
+        totalCost(product[i]);
+        dipslaycart();
     })
 } 
 
@@ -206,7 +215,7 @@ function onloadCartNumber(){
 }
 
 function cartnumbers(product){
-    console.log('the product click is' , product);
+    
 
     let productNumber = localStorage.getItem('cartnumbers')
 
@@ -218,9 +227,72 @@ function cartnumbers(product){
     localStorage.setItem('cartnumbers' , 1)
     document.querySelector('.cart-item').textContent = 1;
 }
-    
+    setItem(product);
 }
+
+function setItem(product){
+    let cartitem = localStorage.getItem('product');
+    cartitem = JSON.parse(cartitem);
+
+    
+
+    if(cartitem != null){
+
+        if(cartitem[product.tag] == undefined){
+            cartitem ={
+                ...cartitem,
+                [product.tag]:product
+            }
+        }
+        cartitem[product.tag].Incart +=1;
+    }
+    else{
+
+        product.Incart = 1;
+        cartitem = {
+            [product.tag]:product
+        }
+    }
+        localStorage.setItem('product' , JSON.stringify(cartitem));
+}
+
+function totalCost(product){
+    let cost = localStorage.getItem('totalCost');
+    if (cost != null){
+        cost = parseInt(cost);
+        localStorage.setItem('totalCost' , cost + product.price );
+    }
+    else{
+        localStorage.setItem('totalCost' , product.price);
+    }
+}
+
+function dipslaycart(){
+    let cartitems = localStorage.getItem('product');
+    cartitems = JSON.parse(cartitems);
+    let productcontainer = document.querySelector('.product');
+
+    console.log(cartitems);
+
+    if(cartitems && productcontainer){
+        productcontainer.innerHTML ='';
+        Object.values(cartitems).map(item =>{
+            productcontainer.innerHTML += `
+            <div class = "productsi">
+            <i class="far fa-times-circle"></i>
+            <img src ="./new project/${item.tag}.jpg">
+            <span>${item.name}</span>
+             </div>
+             `
+                
+            
+        });
+    }
+}
+
+
 onloadCartNumber();
+dipslaycart();
 
 function on() {
     document.getElementById("overlay").style.display = "block";
@@ -230,5 +302,13 @@ function on() {
   function off() {
     document.getElementById("overlay").style.display = "none";
   }
+
+// let shop = document.getElementById('but');
+// let card = document.getElementById('overlay');
+
+// shop.addEventListener('click' , function(){
+//     console.log('clicked');
+//     card.classList.toogle('card');
+// })
   
   

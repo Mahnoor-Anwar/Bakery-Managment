@@ -113,9 +113,25 @@ a{
 }
 
 
-#overlay {
-    background: white;
-    width: 250;
-    height: 700;
-    display: none;
-}
+.card {
+     
+   justify-content: space-around;
+    top: 0px;
+    transition: all 0.3s ease-in-out;
+   max-width: 650px;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+  }
+  #overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 25%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    right: 0;
+    background-color:wheat; /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+   
+  }
+  
