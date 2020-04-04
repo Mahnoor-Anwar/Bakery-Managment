@@ -280,7 +280,7 @@ function dipslaycart(){
             productcontainer.innerHTML += `
             <div class = "productsi">
             <i class="far fa-times-circle"></i>
-            <img src ="./new project/${item.tag}.jpg">
+            <img src ="new project/${item.tag}.jpg">
             <span>${item.name}</span>
              </div>
              `
