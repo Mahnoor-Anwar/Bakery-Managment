@@ -262,11 +262,11 @@ function displaycart() {
 
   if (cartitems && productcontainer) {
     productcontainer.innerHTML = "";
-    Object.values(cartitems).map(item => {
+    Object.values(cartitems).forEach(item => {
       productcontainer.innerHTML += `
             <div class="productss">
             <i class="far fa-times-circle"></i>
-            <img src="new project/${item.tag}.jpg">
+            <img src="/new project/${item.tag}.jpg">
             <span>${item.name}</span>
              </div>
              `;
@@ -274,8 +274,9 @@ function displaycart() {
   }
 }
 
-onloadCartNumber();
 displaycart();
+onloadCartNumber();
+
 
 function on() {
   document.getElementById("overlay").style.display = "block";
