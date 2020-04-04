@@ -122,6 +122,7 @@ a{
     overflow: hidden;
     align-items: center;
     text-align: center;
+    color: black;
   }
   #overlay {
     position: fixed; /* Sit on top of the page content */
@@ -134,4 +135,20 @@ a{
     cursor: pointer; /* Add a pointer on hover */
    
   }
-  
+  h5{
+      text-align: center;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  .pro{
+      height: 3cm;
+  }
+  .price{
+      height: 2cm;
+  }
+  .quantity{
+      height: 2cm;
+  }
+  .title{
+      font-size: medium;
+  }

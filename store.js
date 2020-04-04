@@ -196,7 +196,7 @@ for (let i = 0; i < button.length; i++) {
     console.log("clicked");
     cartnumbers(product[i]);
     totalCost(product[i]);
-    dipslaycart();
+    displaycart();
   });
 }
 
@@ -253,10 +253,10 @@ function totalCost(product) {
   }
 }
 
-function dipslaycart() {
+function displaycart() {
   let cartitems = localStorage.getItem("product");
   cartitems = JSON.parse(cartitems);
-  let productcontainer = document.querySelector(".product");
+  let productcontainer = document.querySelector(".productss");
 
   console.log(cartitems);
 
@@ -264,9 +264,9 @@ function dipslaycart() {
     productcontainer.innerHTML = "";
     Object.values(cartitems).map(item => {
       productcontainer.innerHTML += `
-            <div class="productsi">
+            <div class="productss">
             <i class="far fa-times-circle"></i>
-            <img src="./${item.tag}.jpg">
+            <img src="new project/${item.tag}.jpg">
             <span>${item.name}</span>
              </div>
              `;
@@ -275,7 +275,7 @@ function dipslaycart() {
 }
 
 onloadCartNumber();
-dipslaycart();
+displaycart();
 
 function on() {
   document.getElementById("overlay").style.display = "block";
