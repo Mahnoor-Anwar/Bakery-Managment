@@ -266,7 +266,7 @@ function displaycart() {
       productcontainer.innerHTML += `
             <div class="productss">
             <i class="far fa-times-circle"></i>
-            <img src="./${item.tag}.jpg">
+            <img style="width: 50px; height: 50px;" src="./cartimages/${item.tag}.jpg">
             <span>${item.name}</span>
              </div>
              `;
