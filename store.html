@@ -6,61 +6,30 @@
     <link rel="stylesheet" href="store.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    
 </head>
 <body>
-    <header>
     <nav class="navbar">
         <div class="navbar-center">
            <img src="l.png" height="60" class="logo">
            <h2 style="font-family: Arial, Helvetica, sans-serif;">The baker's Kitchen</h2>
            <a href="#" id="cup" onclick="ScrollFun('container1')">Cupcakes</a>
            <a href="#" id="bis" onclick="ScrollFun('container2')">Biscuits</a>
-           <a href="#" id="sav" onclick="ScrollFun('container3')">savories</a>
+           <a href="#" id="sav" onclick="ScrollFun('container3')">Savories</a>
            <a href="#" id="br" onclick="ScrollFun('container4')">Breakfast Items</a>
+         
 
-              <div class="cart-btn">
-                  
+           <div id="overlay">
+           </div>
+           <div class="cart-btn">
                <span class="nav-icon"  >
-                <i class="fas fa-shopping-cart" id="but"  onclick="on()">  
-                </i>
+                <i class="fas fa-shopping-cart" onclick="on()"  ></i>
                </span>
+             
                <div class="cart-item">0</div>
         </div>
         
     </nav>
 
-  
-       <div class="overlay" id="overlay" onclick="off()">
-    <div class="card" style="width: 20rem;">
-        <div class="card-body">
-          <h4 class="card-title">Your Cart</h4>
-          <br>
-          <section style="height: 3cm;">
-          <a href="#" class="product">Product</a>
-          </section>
-          <hr>
-          
-          <section style="height: 2cm;">
-          <a href="#" class="Quantity">Quantity</a>
-          </section>
-          <hr>
-          
-          <section style="height: 2cm;">
-          <a href="#" class="price">Price</a>
-          </section>
-          <hr>
-          
-          <section style="height: 2cm;">
-          <a href="#" class="total">Total</a>
-            </section>
-            <div class="product">
-        </div>
-        
-      </div>
-      </div>
-   </header>
-   
     <section class="main-content">
         <br>
         <br>
