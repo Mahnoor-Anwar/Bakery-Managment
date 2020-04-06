@@ -32,118 +32,126 @@ let product = [
   },
   {
     name: "chocolate cupcake",
-    price: 90,
+    price: 120,
     tag: "cc",
     Incart: 0,
   },
 
   {
     name: "Vanila cupcake",
-    price: 90,
+    price: 120,
     tag: "vc",
     Incart: 0,
   },
 
   {
     name: "oreo cupcake",
-    price: 90,
+    price: 120,
     tag: "oc",
     Incart: 0,
   },
   {
     name: "strawberry cupcake",
-    price: 90,
-    tag: "sc",
+    price: 120,
+    tag: "zb",
     Incart: 0,
   },
 
   {
     name: "belgium cupcake",
-    price: 90,
+    price: 120,
     tag: "bc",
     Incart: 0,
   },
 
   {
     name: "caramel cupcake",
-    price: 90,
+    price: 120,
     tag: "crc",
     Incart: 0,
   },
 
   {
     name: "jamdot",
-    price: 150,
+    price: 180,
     tag: "jd",
     Incart: 0,
   },
 
   {
     name: "chocolate ",
-    price: 170,
+    price: 200,
     tag: "cb",
     Incart: 0,
   },
 
   {
     name: "nuts",
-    price: 160,
+    price: 180,
     tag: "nb",
     Incart: 0,
   },
 
   {
     name: "coconut",
-    price: 160,
+    price: 180,
     tag: "ccb",
     Incart: 0,
   },
 
   {
     name: "xeeera",
-    price: 150,
+    price: 180,
     tag: "zb",
     Incart: 0,
   },
 
   {
     name: "naan khatai",
-    price: 150,
+    price: 180,
     tag: "nk",
     Incart: 0,
   },
 
   {
-    name: "chicken",
+    name: "chicken Pattise",
     price: 55,
-    tag: "ch",
+    tag: "gb",
     Incart: 0,
   },
 
   {
     name: "samosa",
-    price: 40,
+    price: 45,
     tag: "s",
     Incart: 0,
   },
 
   {
     name: "mini pizza",
-    price: 110,
+    price: 80,
     tag: "mp",
     Incart: 0,
   },
 
   {
+    name: "Apple pie",
+    price: 110,
+    tag: "ap",
+    Incart: 0,
+  },
+
+
+  {
     name: "gralic bread",
-    price: 80,
-    tag: "gb",
+    price: 100,
+    tag: "g",
     Incart: 0,
   },
 
   {
     name: "sandwhich",
-    price: 75,
+    price: 100,
     tag: "sw",
     Incart: 0,
   },
@@ -164,28 +172,28 @@ let product = [
 
   {
     name: "rusk",
-    price: 110,
+    price: 120,
     tag: "r",
     Incart: 0,
   },
 
   {
     name: "Bread",
-    price: 50,
+    price: 90,
     tag: "b",
     Incart: 0,
   },
 
   {
     name: "butter",
-    price: 210,
+    price: 230,
     tag: "bt",
     Incart: 0,
   },
 
   {
     name: "maska bun",
-    price: 70,
+    price: 80,
     tag: "mb",
     Incart: 0,
   },
@@ -257,7 +265,7 @@ function displaycart() {
   let cartitems = localStorage.getItem("product");
   cartitems = JSON.parse(cartitems);
   let productcontainer = document.querySelector(".productss");
-
+  let cost = localStorage.getItem("totalCost");
   console.log(cartitems);
 
   if (cartitems && productcontainer) {
@@ -265,12 +273,37 @@ function displaycart() {
     Object.values(cartitems).map((item) => {
       productcontainer.innerHTML += `
             <div class="productss">
-            <i class="far fa-times-circle"></i>
+            <i class="far fa-times-circle" id="rem"></i>
             <img style="width: 50px; height: 50px;" src="./cartimages/${item.tag}.jpg">
             <span>${item.name}</span>
              </div>
+
+            <div class="price">Rs.${item.price}</div>
+
+             <div class=quantity>
+             <i class="fas fa-angle-left"></i>
+             <span>${item.Incart}</span>
+             <i class="fas fa-angle-right"></i>
+             </div>
+
              `;
     });
+
+  productcontainer.innerHTML += `
+      <div class="total">
+      <br>
+      <hr>
+      <h3>Total </h3>
+        Rs.${cost}
+      </div>  
+      <br>
+      <br>
+      
+      <div>
+        <button id=pop class ="btn btn-danger" style = "font-size: bold">;Done</button>
+      </div>
+    `;
+    
   }
 }
 
@@ -286,10 +319,23 @@ function off() {
   document.getElementById("overlay").style.display = "none";
 }
 
-// let shop = document.getElementById('but');
-// let card = document.getElementById('overlay');
+const butt = document.getElementById('pop');
+const popup = document.querySelector('.popup-wrapper');
+const disappear = document.querySelector('.popup-close')
+const over = document.querySelector('.overlay');
+const rem = document.getElementById('rem');
 
-// shop.addEventListener('click' , function(){
-//     console.log('clicked');
-//     card.classList.toogle('card');
-// })
+butt.addEventListener('click' ,() =>{
+  popup.style.display= "block";
+  over.style.display = "none";
+});
+
+disappear.addEventListener('click', () =>{
+  popup.style.display="none";
+  
+})
+
+rem.addEventListener('click' ,() =>{
+  product.style.display = "none";
+})
+
