@@ -24,12 +24,15 @@ function ScrollFun(element) {
 const button = document.querySelectorAll(".btn");
 
 let product = [
+  
   {
-    name: "you can shop your favourite item",
+    name: "-",
     price: 0,
-    tag: "shop",
+    tag: "-",
     Incart: 0,
   },
+
+
   {
     name: "chocolate cupcake",
     price: 120,
@@ -116,7 +119,7 @@ let product = [
   {
     name: "chicken Pattise",
     price: 55,
-    tag: "gb",
+    tag: "ch",
     Incart: 0,
   },
 
@@ -208,6 +211,8 @@ for (let i = 0; i < button.length; i++) {
   });
 }
 
+localStorage.clear();
+
 function onloadCartNumber() {
   let productNumber = localStorage.getItem("cartnumbers");
 
@@ -296,12 +301,7 @@ function displaycart() {
       <h3>Total </h3>
         Rs.${cost}
       </div>  
-      <br>
-      <br>
-      
-      <div>
-        <button id=pop class ="btn btn-danger" style = "font-size: bold">;Done</button>
-      </div>
+     
     `;
     
   }
@@ -338,4 +338,3 @@ disappear.addEventListener('click', () =>{
 rem.addEventListener('click' ,() =>{
   product.style.display = "none";
 })
-

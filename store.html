@@ -5,7 +5,6 @@
     <title>baker's kitchen</title>
     <link rel="stylesheet" href="store.css" />
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-    />
     
   </head>
   <body>
@@ -28,17 +27,21 @@
             <span class="nav-icon">
               <i class="fas fa-shopping-cart" onclick="on()"></i>
             </span>
-            <button onclick="on()">shop</button>
+            
             <div class="cart-item">0</div>
           </div>
         </div>
       </nav>
-      <div id="overlay" class="overlay">
+      <div id="overlay" class="overlay" >
+        <h5 class=dis style="top: 5px; right: 8pc;" onclick="off()">X</h5>
         <div class="card">
           <div class="product-header">
             <h5 class="title">Your Cart</h5>
           </div>
           <div class="productss"></div>
+        </div>
+        <div>
+          <button id="pop" class="btn btn-full">Done</button>
         </div>
       </div>
     </header>
@@ -60,7 +63,7 @@
         Welcome To The Baker's Kitchen
       </h1>
       <br />
-      <a href="#" class="btn btn-full" style="font-size: large;">Shop now</a>
+      
     </section>
     <br />
     <br />
